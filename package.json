@@ -7,11 +7,11 @@
     "node": "^8.11.1"
   },
   "scripts": {
-    "start": "node server/server.js",
+    "start": "node server.js",
     "debug": "npm-run-all --parallel client-reload-proxy inspector",
     "test": "nyc mocha --exit",
-    "dev": "nodemon server/server.js",
-    "inpsector": "node --inspect=0.0.0.0:9229 server/server.js"
+    "dev": "nodemon server.js",
+    "inpsector": "node --inspect=0.0.0.0:9229 server.js"
   },
   "nodemonConfig": {
     "env": {
@@ -24,7 +24,7 @@
     "cors": "2.8.5",
     "express": "^4.15.3",
     "express-session": "^1.15.2",
-    "mongoose": "5.7.10",
+    "mongoose": "^5.7.10",
     "morgan": "1.9.1",
     "nodemon": "2.0.2"
   },

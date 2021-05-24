@@ -1,15 +1,15 @@
 
-const appName = require('./../package').name;
+const appName = require('./package.json').name;
 const http = require('http');
 const express = require('express');
-const localConfig = require('./config/local.json');
+const localConfig = require('./server/config/local.json'); 
 const morgan = require('morgan');
 const cors = require('cors');
 
 
 const app = express();
-const router = require('./routers/index');
-const conection = require('./conection/mongo');
+const router = require('./server/routers/index');
+const conection = require('./server/conection/mongo');
 conection(app);
 router(app);
 
@@ -22,6 +22,11 @@ app.use(function(req, res, next) {
   next();
 });
 
+
+// Imprimir en el navegador (localhost:8080/api/customers)
+/*app.get ('/', function (req, res) { 
+  res.send (router(app)) 
+})*/
 
 
 
